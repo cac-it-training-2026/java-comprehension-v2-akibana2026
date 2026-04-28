@@ -1,7 +1,6 @@
 package q01_basic.question07;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,16 +25,15 @@ class NumberList {
 
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-	public void addFromOneTo(Integer limit) throws IOException {
+	public void addFromOneTo(Integer limit) {
 		//TODO ここから実装する
 		//1 引数で取得した値までnumbersに整数値を順番に追加する
-		String input_str = reader.readLine();
-		int input_num = Integer.parseInt(input_str);
+		//		String input_str = reader.readLine();
+		//		int input_num = Integer.parseInt(input_str);
 		//引数で取得した値までのため、初期値を1にする
-		for (int i = 1; i < input_num; i++) {
-			//配列の0から代入するために、i - 1にする
-			numbers.add(i - 1);
-			i++;
+		for (int i = 1; i <= limit; i++) {
+			//配列に代入する
+			numbers.add(i);
 		}
 
 	}
@@ -84,11 +82,11 @@ class NumberList {
 		//TODO ここから実装する
 		//リストの要素数をlistlengthに取得し
 		int listlength = numbers.size();
-		//要素数が偶数なら2で割り、奇数なら2で割った後1を足す
+		//要素数が偶数なら2で割り、奇数なら2で割った後
 		if (listlength % 2 == 0) {
 			listlength = listlength / 2;
 		} else {
-			listlength = (listlength / 2) + 1;
+			listlength = listlength / 2;
 		}
 
 		//listlengthだけfor文を回し、毎回先頭の要素を消していく
