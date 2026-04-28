@@ -1,15 +1,13 @@
-package q01_basic.question04;
+package q01_basic.question05;
 
-class Member {
-	//TODO ここから実装する
-	//1.Memberクラスのフィールドを定義
+public class Member extends AbstMember {
+	//1 フィールド定義
 	private int id;
 	private String password;
-	private String name;
 	private int age;
 	private int rank;
 
-	//2 各フィールドのgetter setterを定義
+	//2 getter setter定義
 	public int getId() {
 		return id;
 	}
@@ -24,14 +22,6 @@ class Member {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public int getAge() {
@@ -50,9 +40,6 @@ class Member {
 		this.rank = rank;
 	}
 
-	/**
-	 * 
-	 */
 	//3 引数なしコンストラクタを定義
 	public Member() {
 	}
@@ -74,8 +61,14 @@ class Member {
 		this.rank = rank;
 	}
 
-	//5 showMemberメソッドを定義
-	//前問からidとpasswordを追加
+	//5 buyItemをオーバーライド
+	@Override
+	public void buyItem() {
+		System.out.println(name + " purchased the item at a 50% off");
+	}
+
+	//6 showMemberをオーバーライド
+	@Override
 	public void showMember() {
 		System.out.println("***MEMBER DATA***");
 		System.out.println("id:" + id);
@@ -86,5 +79,4 @@ class Member {
 		System.out.println("*****************");
 
 	}
-
 }
