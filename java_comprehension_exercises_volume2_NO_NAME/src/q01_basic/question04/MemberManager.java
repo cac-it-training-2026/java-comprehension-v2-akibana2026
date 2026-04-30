@@ -9,5 +9,12 @@ class MemberManager {
 	}
 
 	//TODO showAllMembersメソッドを実装する
+	//6 showAllMembersメソッドをstaticとして定義
+	//引数のMember配列を拡張forで取り出すため、
+	public static void showAllMembers(Member members[]) {
+		for (Member member : members) {
+			member.showMember();
+		}
+	}
 
 }
